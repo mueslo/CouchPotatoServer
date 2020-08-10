@@ -209,6 +209,7 @@ class Searcher(SearcherBase):
             log.info2('Wrong: Required word missing: %s', rel_name)
             return False
 
+        # todo: media_words may contain ignored_words!
         ignored_words, contains_ignored = self.containsWords(rel_name, rel_words, 'ignored', media)
         if len(ignored_words) > 0 and contains_ignored:
             log.info2("Wrong: '%s' contains 'ignored words'", rel_name)
